@@ -1,6 +1,7 @@
 package com.sky.mapper;
 
 import com.sky.entity.AddressBook;
+import com.sky.entity.ShoppingCart;
 import org.apache.ibatis.annotations.*;
 import java.util.List;
 
@@ -53,4 +54,10 @@ public interface AddressBookMapper {
     @Delete("delete from address_book where id = #{id}")
     void deleteById(Long id);
 
+    /**
+     * 批量插入购物车数据
+     *
+     * @param shoppingCartList
+     */
+    void insertBatch(List<ShoppingCart> shoppingCartList);
 }
